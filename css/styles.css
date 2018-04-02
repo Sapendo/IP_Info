@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:active,
+*:focus,
+*:hover {
+    outline: 0;
+    outline-offset: 0;
+}
+
+html {
+    background: url(../img/map.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font: normal 16px/normal Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.contents {
+    position: absolute;
+    right: 50%;
+    top: 5%;
+    background-color: rgba(8, 0, 15, 0.9);
+    border-radius: 25px;
+    width: 400px;
+    margin-right: -200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+}
+
+.ipTable {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#form {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+input[name='ip'] {
+    display: inline-block;
+    padding: 5px 20px;
+    border: 1px solid #b7b7b7;
+    border-radius: 11px;
+    font-size: 24px;
+    color: rgba(0, 0, 10, 1);
+    text-overflow: clip;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(102, 93, 93, 1)), to(rgb(234, 236, 248)));
+    background: linear-gradient(180deg, rgba(102, 93, 93, 1) 0, rgb(234, 236, 248) 100%);
+    background-position: 50% 50%;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size: auto auto;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+}
+
+input[name='ip']:focus,
+input[name='ip']:hover,
+input[name='ip']:active {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(234, 236, 248)), to(rgb(102, 93, 93, 1)));
+    background: linear-gradient(180deg, rgba(234, 236, 248) 0, rgb(102, 93, 93, 1) 100%);
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: rgba(0, 0, 10, 1);
+    text-overflow: clip;
+    background: rgba(102, 93, 93, 0.9);
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover,
+.btn:focus {
+    border: 1px solid rgba(102, 93, 93, 0.9);
+    padding: 6px 51px;
+}
+
+.btnValidate,
+.ipTable {
+    display: none;
+    position: relative;
+    -webkit-animation-name: animate;
+    animation-name: animate;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+
+#errorInfo {
+    padding-top: 10px;
+    color: #ff0027;
+}
+
+.map {
+    width: 50%;
+    height: 100%;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+#answerfromValidation {
+    color: #00eb24;
+    padding-bottom: 5px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #fff;
+    padding: 5px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.cellInfo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cellInfo:hover, .cellInfo:focus {	
+    white-space: normal;
+}
+
+#loader {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes animate {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animate {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
